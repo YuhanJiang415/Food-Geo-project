@@ -1,37 +1,6 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/Inn905/Project/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Inn905/Project/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+品舌尖美食，感中国地理。经过漫长的历史演变，我国逐渐形成了川苏鲁浙湘徽粤闽八大菜系。八大菜系的形成，与地理和人文有着千丝万缕的联系。地理的地形、气候、土壤等因素，人文的民俗、通商、制造业的发展等因素都与美食文化的形成有关。而这些因素背后有什么联系，如何将各个因素的影响进行可视化，当今中国和世界又是怎样被美食文化影响着，就是我们这个系统要呈现的内容。
+####################################################
+1. Food.mp4 是平台运行以及界面展示的录屏
+2. food.sql 是平台的数据库文件。使用Mysql储存数据
+3. Front_end 是平台的前端工程文件。前端开发使用Bootstrap搭建基本框架，Echarts完成基本图表的绘制，jQuery实现数据的前后端交互。
+4. Back_end 是后端的工程文件。后端开发使用Springboot搭建的基本框架，基于Jpa的方法实现对数据库的操纵。
