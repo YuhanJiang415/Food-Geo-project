@@ -13,4 +13,4 @@
 7. Report.pdf is a development document, including project architecture, introduction, etc.
 
 # Platform interface
-![1](http://github.com/Inn905/Food-Project/Screenshot/1.png)
+![1](https://github.com/Inn905/Food-project/blob/master/screenshot/1.png)
