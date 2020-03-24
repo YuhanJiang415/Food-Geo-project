@@ -4,7 +4,7 @@
  
 
 # File description
-1. Food.mp4 is a screen recording of platform operation and interface display;  
+1. Food.mp4 is a screen recording of platform operation and it's interface display;  
 2. food.sql is the database file for the platform. Store data using Mysql;  
 3. Front_end folder is the platform's front-end project file. The front end uses Bootstrap to   build the basic framework. Echarts finishes drawing basic charts. jQuery implements front-end and back-end interaction of data；  
 4. Back_end folder  is a back-end project file, using Springboot's basic framework；  
