@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Food</title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <script src="jquery-3.4.1/jquery-3.4.1.js"></script>
+</head>
+<body>
+
+    <div id="main" style="width: auto;height:600px;margin: 0 auto;"></div>
+
+
+
+<script type="text/javascript" src="e-chart/echarts.js"></script>
+<script type="text/javascript" src='e-chart/echarts-wordcloud.js'></script>
+<script type="text/javascript" src='e-chart/china.js'></script>
+<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+<script type="text/javascript" src="e-chart/data-1556466081698-qDedSQsRX.js"></script>
+<script type="text/javascript" src="e-chart/world.js"></script>
+
+
+<script type="text/javascript">
+
+    var myChart = echarts.init(document.getElementById('main'));
+
+    option = {
+        title: {
+            text: '全国主要省市吃辣地图',
+            x:'center',
+            y: '14%',
+            padding: 5,
+            itemGap: 10,
+            textStyle: {
+                color: '#ffffff'
+            }
+        },
+        backgroundColor: '#013954',
+        visualMap: {
+            min: 0,
+            max: 12,
+            show: true,
+            right:"10%",
+            type:'continuous',
+            range:[0, 12],
+            showLabel: true,
+            seriesIndex: [0],
+            calculable:true,
+            realtime:true,
+            inRange: {
+                color: ['#ff0000','#ea4c53','#ea756c','#ea8b86','#ffd7d5'].reverse()
+            },
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        geo: {
+            map: 'china',
+            label: {
+                normal: {
+                    show: false,//显示省份标签
+                    textStyle:{color:"#ffffff"}//省份标签字体颜色
+                },
+                emphasis: {//对应的鼠标悬浮效果
+                    show: true,
+                    textStyle:{color:"#ffffff"}
+                }
+            },
+            itemStyle: {
+                normal: {
+                    borderWidth: .5,//区域边框宽度
+                    borderColor: '#516a89',//区域边框颜色
+                    areaColor:"#334559",//区域颜色
+
+                },
+                emphasis: {
+                    borderWidth: .5,
+                    borderColor: '#4b0082',
+                    areaColor:"#252b3d",
+
+                }
+            },
+            roam: true,
+        },
+
+
+        series: [{
+            name: "mapSer",
+            type: "map",
+            roam: false,
+            coordinateSystem: 'geo',
+            geoIndex: 0,
+            label: {
+                show: false
+            },
+            data:[]
+
+        }, ]
+    };
+
+    myChart.setOption(option);
+
+    var nums=[];
+    $.ajax({
+        type:"get",
+        url:"http://localhost:8081/demo/food/spicy",
+        data:{},
+        dataType : "json",
+        async: false,
+        success:function (data) {
+            for(var i=0;i<data.length;i++){
+                nums.push({name:data[i].province_name,value:data[i].province_value});
+
+            }
+            myChart.setOption(
+                {
+                    series:[
+                        {
+                            data:nums
+                        }
+                    ]
+                }
+            );
+        },
+        error : function(errorMsg) {
+            //请求失败时执行该函数
+            alert("图表请求数据失败!");
+            myChart.hideLoading();
+        }
+
+    });
+
+
+
+</script>
+
+<!--<script type="text/javascript">
+
+    $(function () {
+        refurbishIndex();
+    })
+
+    function refurbishIndex(){
+        $.ajax({
+            type:"get",
+            url:"http://localhost:8081/demo/food/spicy",
+            data:{},
+            async: false,
+            success:function (data) {
+                var str="";
+                for (i in data) {
+                    str += "{name:"+data[i].province_name+",value:"+data[i].province_value+"},\n";
+                }
+
+                document.getElementById("test").innerHTML=str;
+
+            }
+        });
+    }
+
+
+</script>-->
+
+</body>

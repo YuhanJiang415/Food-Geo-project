@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Food</title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="icon" href="assets/img/icon.ico" type="image/x-icon"/>
+    <style>
+        .black_overlay{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index:1001;
+            -moz-opacity: 0.8;
+            opacity:.80;
+            filter: alpha(opacity=88)
+        }
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 10%;
+            left: 20%;
+            width: 800px;
+            height: 500px;
+            padding: 20px;
+            border: 10px solid #144a74;
+            background-color: white;
+            z-index:1002;
+            overflow: auto;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: {"families":["Lato:300,400,700,900"]},
+            custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css']},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/atlantis.min.css">
+
+    <script src="jquery-3.4.1/jquery-3.4.1.js"></script>
+</head>
+<body>
+
+<canvas id="canvas" style="position: absolute; height: 100%; width:100%;" ></canvas>
+
+
+<div class="wrapper">
+    <div class="main-header">
+        <!-- Logo Header -->
+        <div class="logo-header" data-background-color="blue">
+
+            <a href="All_View_China.html" class="logo">
+                <img src="photos/logo.png" alt="navbar brand" class="navbar-brand">
+            </a>
+            <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+            </button>
+            <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+            <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                    <i class="icon-menu"></i>
+                </button>
+            </div>
+        </div>
+        <!-- End Logo Header -->
+
+        <!-- Navbar Header -->
+        <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+
+            <div class="container-fluid">
+                <div class="collapse" id="search-nav">
+                    <form class="navbar-left navbar-form nav-search mr-md-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <a href="index.html" class="btn btn-search pr-1">
+                                    <i class="fa fa-search search-icon"></i>
+                                </a>
+                            </div>
+                            <input type="text" placeholder="搜索 ..." class="form-control">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar sidebar-style-2">
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+            <div class="sidebar-content">
+                <div class="user">
+                    <div class="avatar-sm float-left mr-2">
+                        <img src="photos/川菜.jpg" alt="..." class="avatar-img rounded-circle">
+                    </div>
+                    <div class="info">
+                        <a data-toggle="collapse" aria-expanded="true">
+								<span>
+									川菜
+								</span>
+                            <span class="user-level" style="font-size:12px">
+									麻、辣、咸、甜、酸、苦、香
+								</span>
+                        </a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <ul class="nav nav-primary">
+                    <li class="nav-item">
+                        <a href="index.html">
+                            <i class="fas fa-th-list"></i>
+                            <p>川菜词云</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="Geo.html" >
+                            <i class="far fa-chart-bar"></i>
+                            <p>地理分析</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="History.html">
+                            <i class="fas fa-pen-square"></i>
+                            <p>历史因素</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="SpicyMap.html">
+                            <i class="fas fa-layer-group"></i>
+                            <p>食辣地图</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Globe.html">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>走向世界</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar -->
+    <div id="dg1" style="z-index: 9999; position: fixed ! important; right: 50px; bottom:10px;">
+        <table width=""100% style="position: absolute; width:10px; right: 50px; bottom:10px;">
+            <a href = "javascript:void(0)" onclick = "document.getElementById('light1').style.display='block';document.getElementById('fade').style.display='block'" >
+                <h5 class="text-white-50 op-7 mb-2"> &nbsp;&nbsp;气候&nbsp;&nbsp;</h5>
+            </a>
+        </table>
+    </div>
+    <div id="light1" class="white_content">
+        <a href = "javascript:void(0)" onclick = "document.getElementById('light1').style.display='none';document.getElementById('fade').style.display='none'">
+            关闭
+        </a>
+        <div id="chart1" style="width: 650px;height:410px;margin: 0 auto;"></div>
+    </div>
+
+
+    <div id="dg2" style="z-index: 9999; position: fixed ! important; right: 0px; bottom:10px;">
+        <table width=""100% style="position: absolute; width:10px; right: 0px; bottom:10px;">
+            <a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='block';document.getElementById('fade').style.display='block'">
+                <h5 class="text-white-50 op-7 mb-2"> &nbsp;&nbsp;湿度&nbsp;&nbsp;</h5>
+            </a>
+        </table>
+    </div>
+    <div id="light2" class="white_content">
+        <a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='none';document.getElementById('fade').style.display='none'">
+            关闭
+        </a>
+        <div id="chart2" style="width: 650px;height:410px;margin: 0 auto;"></div>
+    </div>
+
+
+    <div id="fade" class="black_overlay"></div>
+
+
+</div>
+
+
+<script src="js/index.js" charset="utf-8"></script>
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<!-- jQuery UI -->
+<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+<!-- jQuery Scrollbar -->
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<!-- Chart JS -->
+<script src="assets/js/plugin/chart.js/chart.min.js"></script>
+<!-- jQuery Sparkline -->
+<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+<!-- Chart Circle -->
+<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+<!-- Datatables -->
+<script src="assets/js/plugin/datatables/datatables.min.js"></script>
+<!-- Bootstrap Notify -->
+<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<!-- jQuery Vector Maps -->
+<script src="assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+<script src="assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+<!-- Sweet Alert -->
+<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+<!-- Atlantis JS -->
+<script src="assets/js/atlantis.min.js"></script>
+
+<script type="text/javascript" src="e-chart/echarts.js"></script>
+<script type="text/javascript" src='e-chart/echarts-wordcloud.js'></script>
+<script type="text/javascript" src='e-chart/china.js'></script>
+<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+<script type="text/javascript" src="e-chart/data-1556466081698-qDedSQsRX.js"></script>
+<script type="text/javascript" src="e-chart/world.js"></script>
+
+
+
+<script type="text/javascript">
+
+    var myChart = echarts.init(document.getElementById('chart1'));
+    // 指定图表的配置项和数据
+
+    var colors = ['#5793f3', '#d14a61', '#675bba'];
+    var Date1=[];
+    var China1=[];
+    var Sichuan1=[];
+    $.ajax({
+        type:"get",
+        url:"http://localhost:8081/demo/temperature/data",
+        data:{},
+        dataType : "json",
+        async: false,
+        success:function (data) {
+            for(var i=0;i<data.length;i++){
+                Date1.push(data[i].tdate);
+                China1.push(data[i].tchina);
+                Sichuan1.push(data[i].tsichuan);
+            }
+
+        },
+        error : function(errorMsg) {
+            //请求失败时执行该函数
+            alert("图表请求数据失败!");
+            myChart.hideLoading();
+        }
+
+    });
+
+
+    option = {
+        color: colors,
+
+        tooltip: {
+            trigger: 'none',
+            axisPointer: {
+                type: 'cross'
+            }
+        },
+        legend: {
+            data:['四川气温', '全国平均气温']
+        },
+        grid: {
+            top: 70,
+            bottom: 50
+        },
+        xAxis: [
+            {
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLine: {
+                    onZero: false,
+                    lineStyle: {
+                        color: colors[1]
+                    }
+                },
+                axisPointer: {
+                    label: {
+                        formatter: function (params) {
+                            return '气温  ' + params.value
+                                + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                        }
+                    }
+                },
+                data: Date1
+            },
+            {
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLine: {
+                    onZero: false,
+                    lineStyle: {
+                        color: colors[0]
+                    }
+                },
+                axisPointer: {
+                    label: {
+                        formatter: function (params) {
+                            return '气温  ' + params.value
+                                + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                        }
+                    }
+                },
+                data: Date1
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name:'全国平均气温',
+                type:'line',
+                xAxisIndex: 1,
+                smooth: true,
+                data: China1
+            },
+            {
+                name:'四川气温',
+                type:'line',
+                smooth: true,
+                data: Sichuan1
+            }
+        ]
+    };
+
+   myChart.setOption(option);
+
+</script>
+
+<script type="text/javascript">
+
+    var myChart = echarts.init(document.getElementById('chart2'));
+    // 指定图表的配置项和数据
+
+    var Date2=[];
+    var China2=[];
+    var Sichuan2=[];
+    $.ajax({
+        type:"get",
+        url:"http://localhost:8081/demo/rain/data",
+        data:{},
+        dataType : "json",
+        async: false,
+        success:function (data) {
+            for(var i=0;i<data.length;i++){
+                Date2.push(data[i].rdate);
+                China2.push(data[i].rchina);
+                Sichuan2.push(data[i].rsichuan);
+            }
+        },
+        error : function(errorMsg) {
+            //请求失败时执行该函数
+            alert("图表请求数据失败!");
+            myChart.hideLoading();
+        }
+
+    });
+
+
+    var colors = ['#5793f3', '#d14a61', '#675bba'];
+    option = {
+        color: colors,
+
+        tooltip: {
+            trigger: 'none',
+            axisPointer: {
+                type: 'cross'
+            }
+        },
+        legend: {
+            data:['四川湿度', '全国平均湿度']
+        },
+        grid: {
+            top: 70,
+            bottom: 50
+        },
+        xAxis: [
+            {
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLine: {
+                    onZero: false,
+                    lineStyle: {
+                        color: colors[1]
+                    }
+                },
+                axisPointer: {
+                    label: {
+                        formatter: function (params) {
+                            return '湿度  ' + params.value
+                                + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                        }
+                    }
+                },
+                data: Date2
+            },
+            {
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLine: {
+                    onZero: false,
+                    lineStyle: {
+                        color: colors[0]
+                    }
+                },
+                axisPointer: {
+                    label: {
+                        formatter: function (params) {
+                            return '湿度  ' + params.value
+                                + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                        }
+                    }
+                },
+                data: Date2
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name:'全国平均湿度',
+                type:'line',
+                xAxisIndex: 1,
+                smooth: true,
+                data: China2
+            },
+            {
+                name:'四川湿度',
+                type:'line',
+                smooth: true,
+                data:Sichuan2
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+
+</script>
+
+</body>
+</html>

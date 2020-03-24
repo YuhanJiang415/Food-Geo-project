@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Food</title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="icon" href="assets/img/icon.ico" type="image/x-icon"/>
+    <style>
+        .black_overlay{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index:1001;
+            -moz-opacity: 0.8;
+            opacity:.80;
+            filter: alpha(opacity=88)
+        }
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 20%;
+            height: auto;
+            padding: 20px;
+            border: 10px solid #144a74;
+            background-color: #000000;
+            z-index:1002;
+            overflow: auto;
+        }
+    </style>
+
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: {"families":["Lato:300,400,700,900"]},
+            custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css']},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/atlantis.min.css">
+
+
+    <script src="jquery-3.4.1/jquery-3.4.1.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="main-header">
+        <!-- Logo Header -->
+        <div class="logo-header" data-background-color="blue">
+
+            <a href="All_View_China.html" class="logo">
+                <img src="photos/logo.png" alt="navbar brand" class="navbar-brand">
+            </a>
+            <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+            </button>
+            <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+            <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                    <i class="icon-menu"></i>
+                </button>
+            </div>
+        </div>
+        <!-- End Logo Header -->
+
+        <!-- Navbar Header -->
+        <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+
+            <div class="container-fluid">
+                <div class="collapse" id="search-nav">
+                    <form class="navbar-left navbar-form nav-search mr-md-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <a href="index.html" class="btn btn-search pr-1">
+                                    <i class="fa fa-search search-icon"></i>
+                                </a>
+                            </div>
+                            <input type="text" placeholder="搜索 ..." class="form-control">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar sidebar-style-2">
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+            <div class="sidebar-content">
+                <div class="user">
+                    <div class="avatar-sm float-left mr-2">
+                        <img src="photos/川菜.jpg" alt="..." class="avatar-img rounded-circle">
+                    </div>
+                    <div class="info">
+                        <a data-toggle="collapse" aria-expanded="true">
+								<span>
+									川菜
+								</span>
+                            <span class="user-level" style="font-size:12px">
+									麻、辣、咸、甜、酸、苦、香
+								</span>
+                        </a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <ul class="nav nav-primary">
+                    <li class="nav-item">
+                        <a href="index.html">
+                            <i class="fas fa-th-list"></i>
+                            <p>川菜词云</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Geo.html" >
+                            <i class="far fa-chart-bar"></i>
+                            <p>地理分析</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="History.html">
+                            <i class="fas fa-pen-square"></i>
+                            <p>历史因素</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="SpicyMap.html">
+                            <i class="fas fa-layer-group"></i>
+                            <p>食辣地图</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Globe.html">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>走向世界</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar -->
+    <div id="main" style="width: auto;height:600px;margin: 0 auto;">
+
+    </div>
+
+
+
+    <div id="dg1" style="z-index: 9999; position: fixed ! important; right: 15%; bottom: 10px;">
+        <table width=""100% style="position: absolute; width:10px; right: 15%; bottom: 10px;">
+                <a href = "#" onclick = "document.getElementById('light1').style.display='block';document.getElementById('fade').style.display='block'" style="color:red;background-color: #0c5460">
+                    <h5 class="text-white-50 op-7 mb-2"> &nbsp;&nbsp;陆上丝绸之路&nbsp;&nbsp;</h5>
+                </a>
+        </table>
+    </div>
+
+    <div id="dg2" style="z-index: 9999; position: fixed ! important; right: 5%; bottom: 10px;">
+        <table width=""100% style="position: absolute; width:10px; right: 5%; bottom: 10px;">
+            <a href = "#" onclick = "document.getElementById('light2').style.display='block';document.getElementById('fade').style.display='block'" style="color: #48fcff;background-color: #0c5460">
+                <h5 class="text-white-50 op-7 mb-2"> &nbsp;&nbsp;海上丝绸之路&nbsp;&nbsp;</h5>
+            </a>
+        </table>
+    </div>
+
+    <div id="dg3" style="z-index: 9999; position: fixed ! important; right: 0px; bottom: 10px;">
+        <table width=""100% style="position: absolute; width:10px; right: 0px; bottom: 10px;">
+            <a href = "#" onclick = "document.getElementById('light3').style.display='block';document.getElementById('fade').style.display='block'" style="color: #fcff5c;background-color: #0c5460">
+                <h5 class="text-white-50 op-7 mb-2"> &nbsp;&nbsp;辣带&nbsp;&nbsp;</h5>
+            </a>
+        </table>
+    </div>
+
+    <div id="light1" class="white_content" style="color: #ff0000">
+        威尼斯-->鹿特丹<br>鹿特丹-->杜伊斯堡<br>杜伊斯堡-->莫斯科<br>莫斯科-->伊斯坦布尔<br>伊斯坦布尔-->德黑兰<br>德黑兰-->撒马尔罕<br>撒马尔罕-->乌鲁木齐<br>乌鲁木齐-->兰州<br>兰州-->西安<br>
+        <a href = "#" onclick = "document.getElementById('light1').style.display='none';document.getElementById('fade').style.display='none'">
+            关闭
+        </a>
+    </div>
+
+    <div id="light2" class="white_content" style="color:#48fcff">
+        威尼斯-->雅典<br>雅典-->也门<br>也门-->内罗毕<br>内罗毕-->加尔各答<br>加尔各答-->科伦坡<br>科伦坡-->吉隆坡<br>吉隆坡-->雅加达<br>雅加达-->河内<br>河内-->北海<br>北海-->海口<br>海口-->湛江<br>湛江-->广州<br>广州-->福州<br>
+        <a href = "#" onclick = "document.getElementById('light2').style.display='none';document.getElementById('fade').style.display='none'">
+            关闭
+        </a>
+    </div>
+
+    <div id="light3" class="white_content" style="color: #fcff5c" >
+        南美-->西班牙<br>西班牙-->葡萄牙<br>西班牙-->英国<br>英国-->奥地利<br>英国-->波兰<br>葡萄牙-->越南<br>葡萄牙-->老挝<br>葡萄牙-->马来西亚<br>老挝-->云南<br>越南-->广西<br>马来西亚-->广东<br>西班牙-->印度<br>葡萄牙-->印度<br>葡萄牙-->日本<br>
+        <a href = "#" onclick = "document.getElementById('light3').style.display='none';document.getElementById('fade').style.display='none'">
+            关闭
+        </a>
+    </div>
+
+</div>
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<!-- jQuery UI -->
+<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+<!-- jQuery Scrollbar -->
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<!-- Chart JS -->
+<script src="assets/js/plugin/chart.js/chart.min.js"></script>
+<!-- jQuery Sparkline -->
+<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+<!-- Chart Circle -->
+<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+<!-- Datatables -->
+<script src="assets/js/plugin/datatables/datatables.min.js"></script>
+<!-- Bootstrap Notify -->
+<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<!-- jQuery Vector Maps -->
+<script src="assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+<script src="assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+<!-- Sweet Alert -->
+<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+<!-- Atlantis JS -->
+<script src="assets/js/atlantis.min.js"></script>
+
+<script type="text/javascript" src="e-chart/echarts.js"></script>
+<script type="text/javascript" src='e-chart/echarts-wordcloud.js'></script>
+<script type="text/javascript" src='e-chart/china.js'></script>
+<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+<script type="text/javascript" src="e-chart/data-1556466081698-qDedSQsRX.js"></script>
+<script type="text/javascript" src="e-chart/world.js"></script>
+
+<script type="text/javascript">
+
+    var myChart = echarts.init(document.getElementById('main'));
+    // 指定图表的配置项和数据
+
+
+    //var myChart = echarts.init(document.getElementById("3dMap"));
+
+    //地图加载样式设置
+    //背景色#151e2e
+    var autoRotate = false;//是否开启视角绕物体的自动旋转查看。
+    var autoRotateDirection='cw';//物体自传的方向。默认是 'cw' 也就是从上往下看是顺时针方向，也可以取 'ccw'，既从上往下看为逆时针方向。
+    var autoRotateSpeed=20;//旋转速度
+    var autoRotateAfterStill= 3;//在鼠标静止操作后恢复自动旋转的时间间隔。在开启 autoRotate 后有效。
+    var damping=0.8;//鼠标进行旋转，缩放等操作时的迟滞因子，在大于 0 的时候鼠标在停止操作后，视角仍会因为一定的惯性继续运动（旋转和缩放）。
+    var rotateSensitivity=1;//旋转操作的灵敏度，值越大越灵敏。支持使用数组分别设置横向和纵向的旋转灵敏度。0不能旋转
+    var distance = 70; //地图大小   值越大-地图越小，值越小-地图越大
+    var alpha = 90; //垂直翻转角度
+    var beta = 0;//视角绕 y 轴，即左右旋转的角度。
+    var zoomSensitivity = 3;//缩放操作的灵敏度，值越大越灵敏。0表示不能缩放
+    var center = [ 0, -10, 0 ];//[ 18, 10, 0 ]视角中心点，旋转也会围绕这个中心点旋转，默认为[0,0,0]。
+    /**
+     * 地理位置信息，线条起点终点坐标,及辐射国家需要展示的地点坐标
+     */
+
+
+    var regionData =
+        [
+            {
+                "name": "Afghanistan",
+                "value": "0.01"
+            }, {
+            "name": "Albania",
+            "value": "2.01"
+        }, {
+            "name": "Algeria",
+            "value": "0.15"
+        }, {
+            "name": "Andorra",
+            "value": "5.0"
+        }, {
+            "name": "Angola",
+            "value": "3.86"
+        }, {
+            "name": "Antigua and Barbuda",
+            "value": "5.73"
+        }, {
+            "name": "Argentina",
+            "value": "8.40"
+        }, {
+            "name": "Armenia",
+            "value": "1.48"
+        }, {
+            "name": "Australia",
+            "value": "9.02"
+        }, {
+            "name": "Austria",
+            "value": "11.08"
+        }, {
+            "name": "Azerbaijan",
+            "value": "4.54"
+        }, {
+            "name": "Bahamas",
+            "value": ""
+        }, {
+            "name": "Bahrain",
+            "value": "6.98"
+        }, {
+            "name": "Bangladesh",
+            "value": "0.00"
+        }, {
+            "name": "Barbados",
+            "value": ""
+        }, {
+            "name": "Belarus",
+            "value": "5.53"
+        }, {
+            "name": "Belgium",
+            "value": "10.63"
+        }, {
+            "name": "Belize",
+            "value": "6.25"
+        }, {
+            "name": "Benin",
+            "value": "1.29"
+        }, {
+            "name": "Bhutan",
+            "value": "0.23"
+        }, {
+            "name": "Bolivia",
+            "value": "3.23"
+        }, {
+            "name": "Bosnia and Herzegovina",
+            "value": "9.05"
+        }, {
+            "name": "Botswana",
+            "value": "4.29"
+        }, {
+            "name": "Brazil",
+            "value": "5.76"
+        }, {
+            "name": "Brunei Darussalam",
+            "value": "0.12"
+        }, {
+            "name": "Bulgaria",
+            "value": "5.86"
+        }, {
+            "name": "Burkina Faso",
+            "value": "5.01"
+        }, {
+            "name": "Burundi",
+            "value": "9.10"
+        }, {
+            "name": "Cambodia",
+            "value": "1.48"
+        }, {
+            "name": "Cameroon",
+            "value": "3.77"
+        }, {
+            "name": "Canada",
+            "value": "7.80"
+        }, {
+            "name": "Cape Verde",
+            "value": "4.78"
+        }, {
+            "name": "Central African Republic",
+            "value": "1.53"
+        }, {
+            "name": "Chad",
+            "value": "0.31"
+        }, {
+            "name": "Chile",
+            "value": "6.60"
+        }, {
+            "name": "China",
+            "value": "5.20"
+        }, {
+            "name": "Colombia",
+            "value": "5.68"
+        }, {
+            "name": "Comoros",
+            "value": "0.31"
+        }, {
+            "name": "Congo",
+            "value": "2.60"
+        }, {
+            "name": "Cook Islands",
+            "value": "3.73"
+        }, {
+            "name": "Costa Rica",
+            "value": "5.65"
+        }, {
+            "name": "Cote d'Ivoire",
+            "value": "1.77"
+        }, {
+            "name": "Croatia",
+            "value": "12.25"
+        }, {
+            "name": "Cuba",
+            "value": "2.26"
+        }, {
+            "name": "Cyprus",
+            "value": "11.52"
+        }, {
+            "name": "Czech Republic",
+            "value": "12.99"
+        }, {
+            "name": "Democratic People's Republic of Korea",
+            "value": "3.26"
+        }, {
+            "name": "Democratic Republic of the Congo",
+            "value": "1.86"
+        }, {
+            "name": "Denmark",
+            "value": "11.71"
+        }, {
+            "name": "Djibouti",
+            "value": "1.79"
+        }, {
+            "name": "Dominica",
+            "value": "7.50"
+        }, {
+            "name": "Dominican Republic",
+            "value": "6.66"
+        }, {
+            "name": "Ecuador",
+            "value": "2.36"
+        }, {
+            "name": "Egypt",
+            "value": "0.21"
+        }, {
+            "name": "El Salvador",
+            "value": "3.72"
+        }, {
+            "name": "Equatorial Guinea",
+            "value": "3.38"
+        }, {
+            "name": "Eritrea",
+            "value": "0.59"
+        }, {
+            "name": "Estonia",
+            "value": "9.00"
+        }, {
+            "name": "Ethiopia",
+            "value": "0.86"
+        }, {
+            "name": "Fiji",
+            "value": "1.72"
+        }, {
+            "name": "Finland",
+            "value": "9.31"
+        }, {
+            "name": "France",
+            "value": "11.43"
+        }, {
+            "name": "Gabon",
+            "value": "8.01"
+        }, {
+            "name": "Gambia",
+            "value": "2.59"
+        }, {
+            "name": "Georgia",
+            "value": "1.47"
+        }, {
+            "name": "Germany",
+            "value": "11.99"
+        }, {
+            "name": "Ghana",
+            "value": "1.57"
+        }, {
+            "name": "Greece",
+            "value": "9.01"
+        }, {
+            "name": "Grenada",
+            "value": "6.67"
+        }, {
+            "name": "Guatemala",
+            "value": "1.46"
+        }, {
+            "name": "Guinea",
+            "value": "0.20"
+        }, {
+            "name": "Guinea-Bissau",
+            "value": "2.19"
+        }, {
+            "name": "Guyana",
+            "value": "3.84"
+        }, {
+            "name": "Haiti",
+            "value": "8.30"
+        }, {
+            "name": "Honduras",
+            "value": "2.92"
+        }, {
+            "name": "Hungary",
+            "value": "13.60"
+        }, {
+            "name": "Iceland",
+            "value": "6.99"
+        }, {
+            "name": "India",
+            "value": "0.29"
+        }, {
+            "name": "Indonesia",
+            "value": "0.09"
+        }, {
+            "name": "Iran (Islamic Republic of)",
+            "value": "0.01"
+        }, {
+            "name": "Iraq",
+            "value": "0.21"
+        }, {
+            "name": "Ireland",
+            "value": "13.69"
+        }, {
+            "name": "Israel",
+            "value": "2.47"
+        }, {
+            "name": "Italy",
+            "value": "8.02"
+        }, {
+            "name": "Jamaica",
+            "value": "1.74"
+        }, {
+            "name": "Japan",
+            "value": "7.59"
+        }, {
+            "name": "Jordan",
+            "value": "0.31"
+        }, {
+            "name": "Kazakhstan",
+            "value": "2.96"
+        }, {
+            "name": "Kenya",
+            "value": "1.51"
+        }, {
+            "name": "Kiribati",
+            "value": "0.45"
+        }, {
+            "name": "Kuwait",
+            "value": "0.03"
+        }, {
+            "name": "Kyrgyzstan",
+            "value": "3.63"
+        }, {
+            "name": "Lao People's Democratic Republic",
+            "value": "6.91"
+        }, {
+            "name": "Latvia",
+            "value": "9.61"
+        }, {
+            "name": "Lebanon",
+            "value": "3.24"
+        }, {
+            "name": "Lesotho",
+            "value": "1.82"
+        }, {
+            "name": "Liberia",
+            "value": "3.82"
+        }, {
+            "name": "Libyan Arab Jamahiriya",
+            "value": "0.01"
+        }, {
+            "name": "Lithuania",
+            "value": "9.89"
+        }, {
+            "name": "Luxembourg",
+            "value": "15.56"
+        }, {
+            "name": "Madagascar",
+            "value": "1.59"
+        }, {
+            "name": "Malawi",
+            "value": "1.41"
+        }, {
+            "name": "Malaysia",
+            "value": "1.06"
+        }, {
+            "name": "Maldives",
+            "value": "0.02"
+        }, {
+            "name": "Mali",
+            "value": "0.50"
+        }, {
+            "name": "Malta",
+            "value": "6.02"
+        }, {
+            "name": "Marshall Islands",
+            "value": "0.03"
+        }, {
+            "name": "Mauritania",
+            "value": "5.0"
+        }, {
+            "name": "Mauritius",
+            "value": "3.03"
+        }, {
+            "name": "Mexico",
+            "value": "4.57"
+        }, {
+            "name": "Micronesia (Federated States of)",
+            "value": "1.23"
+        }, {
+            "name": "Monaco",
+            "value": "1.0"
+        }, {
+            "name": "Mongolia",
+            "value": "2.83"
+        }, {
+            "name": "Montenegro",
+            "value": "1.0"
+        }, {
+            "name": "Morocco",
+            "value": "0.45"
+        }, {
+            "name": "Mozambique",
+            "value": "0.52"
+        }, {
+            "name": "Myanmar",
+            "value": "0.33"
+        }, {
+            "name": "Namibia",
+            "value": "5.97"
+        }, {
+            "name": "Nauru",
+            "value": "0.87"
+        }, {
+            "name": "Nepal",
+            "value": "0.19"
+        }, {
+            "name": "Netherlands",
+            "value": "9.68"
+        }, {
+            "name": "New Zealand",
+            "value": "9.68"
+        }, {
+            "name": "Nicaragua",
+            "value": "2.48"
+        }, {
+            "name": "Niger",
+            "value": "0.05"
+        }, {
+            "name": "Nigeria",
+            "value": "10.57"
+        }, {
+            "name": "Niue",
+            "value": "9.47"
+        }, {
+            "name": "Norway",
+            "value": "5.50"
+        }, {
+            "name": "Oman",
+            "value": "0.26"
+        }, {
+            "name": "Pakistan",
+            "value": "0.01"
+        }, {
+            "name": "Palau",
+            "value": "1.0"
+        }, {
+            "name": "Panama",
+            "value": "5.98"
+        }, {
+            "name": "Papua New Guinea",
+            "value": "1.62"
+        }, {
+            "name": "Paraguay",
+            "value": "3.73"
+        }, {
+            "name": "Peru",
+            "value": "3.83"
+        }, {
+            "name": "Philippines",
+            "value": "3.51"
+        }, {
+            "name": "Poland",
+            "value": "8.09"
+        }, {
+            "name": "Portugal",
+            "value": "11.54"
+        }, {
+            "name": "Qatar",
+            "value": "4.40"
+        }, {
+            "name": "Republic of Korea",
+            "value": "7.87"
+        }, {
+            "name": "Republic of Moldova",
+            "value": "13.18"
+        }, {
+            "name": "Romania",
+            "value": "9.74"
+        }, {
+            "name": "Rwanda",
+            "value": "6.93"
+        }, {
+            "name": "Saint Kitts and Nevis",
+            "value": "6.73"
+        }, {
+            "name": "Saint Lucia",
+            "value": "11.48"
+        }, {
+            "name": "Saint Vincent and the Grenadines",
+            "value": "7.00"
+        }, {
+            "name": "Samoa",
+            "value": "1.73"
+        }, {
+            "name": "San Marino",
+            "value": "0.5"
+        }, {
+            "name": "Sao Tome and Principe",
+            "value": "6.95"
+        }, {
+            "name": "Saudi Arabia",
+            "value": "0.10"
+        }, {
+            "name": "Senegal",
+            "value": "0.46"
+        }, {
+            "name": "Serbia",
+            "value": "10.0"
+        }, {
+            "name": "Seychelles",
+            "value": "3.36"
+        }, {
+            "name": "Sierra Leone",
+            "value": "6.39"
+        }, {
+            "name": "Singapore",
+            "value": "2.17"
+        }, {
+            "name": "Slovakia",
+            "value": "10.35"
+        }, {
+            "name": "Slovenia",
+            "value": "6.74"
+        }, {
+            "name": "Solomon Islands",
+            "value": "0.97"
+        }, {
+            "name": "Somalia",
+            "value": "5.0"
+        }, {
+            "name": "South Africa",
+            "value": "6.72"
+        }, {
+            "name": "Spain",
+            "value": "11.68"
+        }, {
+            "name": "Sri Lanka",
+            "value": "0.28"
+        }, {
+            "name": "Sudan",
+            "value": "0.30"
+        }, {
+            "name": "Suriname",
+            "value": "0.01"
+        }, {
+            "name": "Swaziland",
+            "value": "4.60"
+        }, {
+            "name": "Sweden",
+            "value": "5.96"
+        }, {
+            "name": "Switzerland",
+            "value": "10.83"
+        }, {
+            "name": "Tajikistan",
+            "value": "0.39"
+        }, {
+            "name": "Thailand",
+            "value": "5.59"
+        }, {
+            "name": "Timor-Leste",
+            "value": "0.03"
+        }, {
+            "name": "Togo",
+            "value": "1.24"
+        }, {
+            "name": "Tonga",
+            "value": "0.75"
+        }, {
+            "name": "Trinidad and Tobago",
+            "value": "4.17"
+        }, {
+            "name": "Tunisia",
+            "value": "1.23"
+        }, {
+            "name": "Turkey",
+            "value": "1.37"
+        }, {
+            "name": "Turkmenistan",
+            "value": "1.18"
+        }, {
+            "name": "Tuvalu",
+            "value": "1.37"
+        }, {
+            "name": "Uganda",
+            "value": "0.04"
+        }, {
+            "name": "Ukraine",
+            "value": "6.09"
+        }, {
+            "name": "United Arab Emirates",
+            "value": "0.02"
+        }, {
+            "name": "United Kingdom",
+            "value": "11.75"
+        }, {
+            "name": "Uruguay",
+            "value": "7.74"
+        }, {
+            "name": "Uzbekistan",
+            "value": "1.51"
+        }, {
+            "name": "Vanuatu",
+            "value": "0.75"
+        }, {
+            "name": "Venezuela",
+            "value": "6.67"
+        }, {
+            "name": "Viet Nam",
+            "value": "0.85"
+        }, {
+            "name": "Yemen",
+            "value": "0.04"
+        }, {
+            "name": "Zambia",
+            "value": "2.40"
+        }, {
+            "name": "Zimbabwe",
+            "value": "4.41"
+        }, {
+            "name": "Greenland",
+            "value": "5.0"
+        }, {
+            "name": "B",
+            "value": "0.01"
+        }, {
+            "name": "United States",
+            "value": "8.61"
+        }, {
+            "name": "Tanzania",
+            "value": "5.45"
+        }, {
+            "name": "Macedonia",
+            "value": "5.69"
+        }, {
+            "name": "Syria",
+            "value": "0.49"
+        }, {
+            "name": "Russia",
+            "value": "10.32"
+        }, {
+            "name": "C",
+            "value": "1.0"
+        }
+        ];
+
+    //出境
+
+    //线条末端点点
+
+    //valueMap中的最大值最小值
+    var min=0;
+    var max=0;
+
+    var line= [
+        {fromName:'南美',toName:'西班牙',coords:[[-58.24819815487263, -23.244711710966367],[-3.45,40.25]]},
+        {fromName:'西班牙',toName:'葡萄牙',coords:[[-3.45,40.25],[-9.1,38.42]]},
+        {fromName:'西班牙',toName:'英国',coords:[[-3.45,40.25],[-0.05,51.36]]},
+        {fromName:'英国',toName:'奥地利',coords:[[-0.05,51.36],[16.22,48.12]]},//奥地利
+        {fromName:'英国',toName:'波兰',coords:[[-0.05,51.36],[21,52.13]]},//波兰
+        {fromName:'葡萄牙',toName:'越南',coords:[[-9.1,38.42],[105.55,21.05]]},//越南
+        {fromName:'葡萄牙',toName:'老挝',coords:[[-9.1,38.42],[102.36,17.58]]},//老挝
+        {fromName:'葡萄牙',toName:'马来西亚',coords:[[-9.1,38.42],[101.41,3.09]]},//马来西亚
+        {fromName:'老挝',toName:'云南',coords:[[102.36,17.58],[102.9199, 25.4663]]},
+        {fromName:'越南',toName:'广西',coords:[[105.55,21.05],[108.479, 23.1152]]},
+        {fromName:'马来西亚',toName:'广东',coords:[[101.41,3.09],[113.12244, 23.009505]]},
+        {fromName:'西班牙',toName:'印度',coords:[[-3.45,40.25],[77.13,28.37]]},
+        {fromName:'葡萄牙',toName:'印度',coords:[[-9.1,38.42],[77.13,28.37]]},
+        {fromName:'葡萄牙',toName:'日本',coords:[[-9.1,38.42],[139.746094,35.960223]]}
+    ];
+    //入
+   var line_land=[
+        {fromName:'威尼斯',toName:'鹿特丹',coords:[[12.34518886,45.4347648],[4.483333333,51.91666667]]},
+        {fromName:'鹿特丹',toName:'杜伊斯堡',coords:[[4.483333333,51.91666667],[6.73553,51.42825]]},
+        {fromName:'杜伊斯堡',toName:'莫斯科',coords:[[6.73553,51.42825],[37.61666667,55.75]]},
+        {fromName:'莫斯科',toName:'伊斯坦布尔',coords:[[37.61666667,55.75],[28.96666667,41.03333333]]},
+        {fromName:'伊斯坦布尔',toName:'德黑兰',coords:[[28.96666667,41.03333333],[51.05,35.75]]},
+        {fromName:'德黑兰',toName:'撒马尔罕',coords:[[51.05,35.75],[66.97518,39.65488]]},
+        {fromName:'撒马尔罕',toName:'乌鲁木齐',coords:[[66.97518,39.65488],[87.6182735,43.76185821]]},
+        {fromName:'乌鲁木齐',toName:'兰州',coords:[[87.6182735,43.76185821],[103.75,36.01666667]]},
+        {fromName:'兰州',toName:'西安',coords:[[103.75,36.01666667],[108.9,34.26666667]]}
+    ];
+    var line_sea=[
+        {fromName:'威尼斯',toName:'雅典',coords:[[12.34518886,45.4347648],[23.73333333,38.03333333]]},
+        {fromName:'雅典',toName:'也门',coords:[[23.73333333,38.03333333],[47.285156,15.707663]]},
+        {fromName:'也门',toName:'内罗毕',coords:[[47.285156,15.707663],[36.06666667,-1.283333333]]},
+        {fromName:'内罗毕',toName:'加尔各答',coords:[[36.06666667,-1.283333333],[88.03333333,22.56666667]]},
+        {fromName:'加尔各答',toName:'科伦坡',coords:[[88.03333333,22.56666667],[79.86666667,6.916666667]]},
+        {fromName:'科伦坡',toName:'吉隆坡',coords:[[79.86666667,6.916666667],[101.7,3.133333333]]},
+        {fromName:'吉隆坡',toName:'雅加达',coords:[[101.7,3.133333333],[106.8348428,-6.192267234]]},
+        {fromName:'雅加达',toName:'河内',coords:[[106.8348428,-6.192267234],[105.8833333,21.01666667]]},
+        {fromName:'河内',toName:'北海',coords:[[105.8833333,21.01666667],[109.1512,21.40413]]},
+        {fromName:'北海',toName:'海口',coords:[[109.1512,21.40413],[110.3386545,20.03728545]]},
+        {fromName:'海口',toName:'湛江',coords:[[110.3386545,20.03728545],[110.3968048,21.18326132]]},
+        {fromName:'湛江',toName:'广州',coords:[[110.3968048,21.18326132],[113.05,23.03333333]]},
+        {fromName:'广州',toName:'福州',coords:[[113.05,23.03333333],[119.0333333,26.01666667
+            ]]}
+    ];
+
+
+    var point=[
+        [-3.45,40.25,'西班牙'],
+        [-9.1,38.42,'葡萄牙'],
+        [-0.05,51.36,'英国'],
+        [16.22,48.12,'奥地利'],
+        [ 21,52.13,'波兰'],
+        [102.36,17.58,'老挝'],
+        [105.55,21.05,'越南'],
+        [101.41,3.09,'马来西亚'],
+        [77.13,28.37,'印度'],
+        [139.746094,35.960223,'日本'],
+        [4.483333333,51.91666667,'鹿特丹'],
+        [6.73553,51.42825,'杜伊斯堡'],
+        [37.61666667,55.75,'莫斯科'],
+        [28.96666667,41.03333333,'伊斯坦布尔'],
+        [51.05,35.75,'德黑兰'],
+        [66.97518,39.65488,'撒马尔罕'],
+        [87.9236, 43.5883,'乌鲁木齐'],
+        [103.75,36.01666667,'兰州'],
+        [108.9,34.26666667,'西安'],
+        [23.73333333,38.03333333,'雅典'],
+        [47.285156,15.707663,'也门'],
+        [36.06666667,-1.283333333,'内罗毕'],
+        [88.03333333,22.56666667,'加尔各答'],
+        [79.86666667,6.916666667,'科伦坡'],
+        [101.7,3.133333333,'吉隆坡'],
+        [106.8348428,-6.192267234,'雅加达'],
+        [105.8833333,21.01666667,'河内'],
+        [109.1512,21.40413,'北海'],
+        [110.3386545,20.03728545,'海口'],
+        [110.3968048,21.18326132,'湛江'],
+        [113.05,23.03333333,'广州'],
+        [119.0333333,26.01666667,'福州'],
+        [102.9199, 25.4663,'云南'],
+        [108.479, 23.1152,'广西'],
+        [113.12244, 23.009505,'广东'],
+
+
+    ];//出
+
+
+        option = {
+            title: {
+                text: '世界辣椒传播历史',
+                x:'center',
+                y: '14%',
+                padding: 5,
+                itemGap: 10,
+                textStyle: {
+                    color: '#ffffff'
+                }
+            },
+
+            legend: {
+                right:'20%',
+                top:'20%',
+                itemWidth: 100,
+                itemHeight: 100,
+                icon: "rect",
+                data:['陆上丝绸之路', '海上丝绸之路','辣带'],
+                selected: {
+                    '陆上丝绸之路' : true,
+                    '海上丝绸之路' : true,
+                    '辣带' : true
+                    //不想显示的都设置成false
+                }
+            },
+
+            backgroundColor:"#144a74",
+            visualMap :  {
+                show : false,
+                min: 0,
+                max: 15,
+                calculable: true,
+                inRange : {//由低到高
+                    color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#4e7ca1', '#2376b7', '#126bae', '#619ac3', '#11659a', '#144a74']
+                }
+
+            },
+            geo3D : {
+                show : false,
+                map : 'world',
+                viewControl : {
+                    autoRotate : autoRotate,
+                    distance : distance, //地图大小   值越大-地图越小，值越小-地图越大
+                    alpha : alpha, //垂直翻转角度
+                    beta : beta,
+                    zoomSensitivity : zoomSensitivity,
+                    center : center,
+                    autoRotateDirection: autoRotateDirection,
+                    autoRotateSpeed: autoRotateSpeed,
+                    autoRotateAfterStill: autoRotateAfterStill,
+                    damping: damping,
+                    rotateSensitivity: rotateSensitivity
+                }
+                //environment: 'background.png',//默认'auto'环境贴图，支持純颜色值，渐变色，全景贴图的 url
+            },
+            series : [
+                {
+                    type : 'map3D',
+                    map : 'world',
+                    name : 'World_3DMap',
+                    height:'auto',
+                    zlevel : 3,
+                    boxWidth : 'auto',
+                    boxHeight : 'auto',
+                    boxDepth : 'auto',
+                    regionHeight : 3,
+                    environment: '#151e2e',
+                    //'color' 只显示颜色，不受光照等其它因素的影响。
+                    //'lambert' 通过经典的 lambert 着色表现光照带来的明暗
+                    //'realistic' 真实感渲染，配合 light.ambientCubemap 和 postEffect 使用可以让展示的画面效果和质感有质的提升
+                    //shading:'lambert',
+                    top : '0',
+                    instancing : false, //instancing会将 GeoJSON 中所有的 geometry 合并成一个，在 GeoJSON 拥有特别多（上千）的 geometry 时可以有效提升绘制效率。
+                    //environment: 'background.png',
+                    viewControl : {
+                        autoRotate : autoRotate,
+                        distance : distance, //地图大小   值越大-地图越小，值越小-地图越大
+                        alpha : alpha, //垂直翻转角度
+                        beta : beta,
+                        zoomSensitivity : zoomSensitivity,
+                        center : center,
+                        autoRotateDirection: autoRotateDirection,
+                        autoRotateSpeed: autoRotateSpeed,
+                        autoRotateAfterStill: autoRotateAfterStill,
+                        damping: damping,
+                        rotateSensitivity: rotateSensitivity
+                    },
+                    itemStyle : {
+                        areaColor: "#dafbfb",
+                        opacity : 1,
+                        borderWidth : 0.3,
+                        borderColor : '#545454'
+                    },
+
+                    light: { //光照阴影
+                        main: {
+                            color: '#fff', //光照颜色
+                            intensity: 1, //光照强度
+                            shadowQuality: 'high', //阴影亮度
+                            shadow: false, //是否显示阴影
+                            alpha:55,
+                            beta:10
+
+                        },
+                        ambient: {
+                            intensity: 0.22
+                        }
+                    },
+                    data : regionData
+                },
+
+                { //line_land
+                    type : 'lines3D',
+                    name : '陆上丝绸之路',
+                    coordinateSystem : 'geo3D',
+                    zlevel : 5,
+                    effect : {
+                        show : true,
+                        period : 4,
+                        trailLength : 0.1,
+                        trailColor : '#ffffff',
+                        trailWidth : 3
+                    },
+                    lineStyle : {
+                        normal : {
+                            color : 'red',
+                            width : 2,
+                            opacity: 1
+                        }
+                    },
+                    data :line_land
+                },
+                { //line_sea
+                    type : 'lines3D',
+                    name : '海上丝绸之路',
+                    coordinateSystem : 'geo3D',
+                    zlevel : 5,
+                    effect : {
+                        show : true,
+                        period : 8,
+                        trailLength : 0.1,
+                        trailColor : '#ffffff',
+                        trailWidth : 3
+                    },
+                    lineStyle : {
+                        normal : {
+                            color : '#00EAFF',
+                            width : 2,
+                            opacity: 1
+                        }
+                    },
+                    data :line_sea
+                },
+                { //line
+                    type : 'lines3D',
+                    name : '辣带',
+                    coordinateSystem : 'geo3D',
+                    zlevel : 5,
+                    effect : {
+                        show : true,
+                        period : 8,
+                        trailLength : 0.1,
+                        trailColor : '#ffffff',
+                        trailWidth : 3
+                    },
+                    lineStyle : {
+                        normal : {
+                            color :'yellow',
+                            width : 2,
+                            opacity: 1
+                        }
+                    },
+                    data :line
+                },
+                {//红色五角星
+                    name: 'scatter3D',
+                    type: "scatter3D",
+                    zlevel : 5,
+                    coordinateSystem: 'geo3D',
+                    symbol: 'pin',
+                    symbolSize: 25,
+                    opacity: 1,
+                    label: {
+                        show: false
+                    },
+                    itemStyle: {
+                        color: "red",
+                        opacity: 1
+                    },
+                    data:[
+                        [103.9526, 30.7617,'四川'],
+                        [-58.24819815487263, -23.244711710966367,'南美'],
+                       [12.34518886,45.4347648,'威尼斯']
+
+                    ]
+                },
+                {//线条末端点点
+                    name: 'Point',
+                    type: "scatter3D",
+                    coordinateSystem: 'geo3D',
+                    symbol: 'circle',// 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'
+                    symbolSize: 10,
+                    opacity: 1,
+
+                    itemStyle: {
+                        color:'#ffa022',
+                        borderWidth: 1,
+                        borderColor: '#f9d78a',
+                        opacity: 1
+                    },
+                    emphasis:{
+                        itemStyle:{
+                            color:'green',			//鼠标移到点上的颜色变化
+                            opacity:1,				//不透明度
+                            borderWidth:0,			//图像描边宽度
+                            borderColor:'#fff' 		//图形描边颜色
+                        },
+                        label:{
+                            show:false,				//鼠标移动到点上是否显示标签
+                            distance: 15,			//标签与点的距离
+                            position:'left',      	//标签位置
+                            textStyle:{
+                                color:'black', 		//文字颜色
+                                borderWidth:0,  	//标签上边框宽度
+                                borderColor:'white',//边框颜色
+                                fontFamily:'宋体',	//标签字体
+                                fontSize:14,		//字体大小
+                                fontWeight:'normal'	//是否加粗
+                            }
+                        }
+                    },
+
+                    data :point
+                }
+               ]
+        };
+
+        myChart.setOption(option);
+
+
+</script>
+
+</body>
+</html>

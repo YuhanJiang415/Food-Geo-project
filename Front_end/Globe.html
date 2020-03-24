@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Food</title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="icon" href="assets/img/icon.ico" type="image/x-icon"/>
+
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: {"families":["Lato:300,400,700,900"]},
+            custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css']},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/atlantis.min.css">
+
+    <script src="jquery-3.4.1/jquery-3.4.1.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="main-header">
+        <!-- Logo Header -->
+        <div class="logo-header" data-background-color="blue">
+
+            <a href="All_View_China.html" class="logo">
+                <img src="photos/logo.png" alt="navbar brand" class="navbar-brand">
+            </a>
+            <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+            </button>
+            <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+            <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                    <i class="icon-menu"></i>
+                </button>
+            </div>
+        </div>
+        <!-- End Logo Header -->
+
+        <!-- Navbar Header -->
+        <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+
+            <div class="container-fluid">
+                <div class="collapse" id="search-nav">
+                    <form class="navbar-left navbar-form nav-search mr-md-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <a href="index.html" class="btn btn-search pr-1">
+                                    <i class="fa fa-search search-icon"></i>
+                                </a>
+                            </div>
+                            <input type="text" placeholder="搜索 ..." class="form-control">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar sidebar-style-2">
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+            <div class="sidebar-content">
+                <div class="user">
+                    <div class="avatar-sm float-left mr-2">
+                        <img src="photos/川菜.jpg" alt="..." class="avatar-img rounded-circle">
+                    </div>
+                    <div class="info">
+                        <a data-toggle="collapse" aria-expanded="true">
+								<span>
+									川菜
+								</span>
+                            <span class="user-level" style="font-size:12px">
+									麻、辣、咸、甜、酸、苦、香
+								</span>
+                        </a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <ul class="nav nav-primary">
+                    <li class="nav-item">
+                        <a href="index.html">
+                            <i class="fas fa-th-list"></i>
+                            <p>川菜词云</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Geo.html" >
+                        <i class="far fa-chart-bar"></i>
+                        <p>地理分析</p>
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="History.html">
+                            <i class="fas fa-pen-square"></i>
+                            <p>历史因素</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="SpicyMap.html">
+                            <i class="fas fa-layer-group"></i>
+                            <p>食辣地图</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="Globe.html">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>走向世界</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar -->
+
+
+
+
+
+                <div id="China" style="width: auto;height:600px;margin: 0 auto;"></div>
+
+                <div id="dg" style="z-index: 9999; position: fixed ! important; right: 0px; bottom: 10px;">
+                    <table width=""100% style="position: absolute; width:10px; right: 0px; bottom: 10px;">
+                        <a href="toAll.html">
+                            <h5 class="text-white-50 op-7 mb-2">NEXT&nbsp;&nbsp;</h5>
+                        </a>
+                    </table>
+                </div>
+
+
+
+</div>
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<!-- jQuery UI -->
+<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+<!-- jQuery Scrollbar -->
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<!-- Chart JS -->
+<script src="assets/js/plugin/chart.js/chart.min.js"></script>
+<!-- jQuery Sparkline -->
+<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+<!-- Chart Circle -->
+<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+<!-- Datatables -->
+<script src="assets/js/plugin/datatables/datatables.min.js"></script>
+<!-- Bootstrap Notify -->
+<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<!-- jQuery Vector Maps -->
+<script src="assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+<script src="assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+<!-- Sweet Alert -->
+<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+<!-- Atlantis JS -->
+<script src="assets/js/atlantis.min.js"></script>
+
+<script type="text/javascript" src="e-chart/echarts.js"></script>
+<script type="text/javascript" src='e-chart/echarts-wordcloud.js'></script>
+<script type="text/javascript" src='e-chart/china.js'></script>
+<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+<script type="text/javascript" src="e-chart/data-1556466081698-qDedSQsRX.js"></script>
+<script type="text/javascript" src="e-chart/world.js"></script>
+
+<script type="text/javascript">
+
+    var myChart = echarts.init(document.getElementById('China'));
+
+    var chinaGeoCoordMap = {
+        '黑龙江': [127.9688, 45.368],
+        '内蒙古': [110.3467, 41.4899],
+        "吉林": [125.8154, 44.2584],
+        '北京市': [116.4551, 40.2539],
+        "辽宁": [123.1238, 42.1216],
+        "河北": [114.4995, 38.1006],
+        "天津": [117.4219, 39.4189],
+        "山西": [112.3352, 37.9413],
+        "陕西": [109.1162, 34.2004],
+        "甘肃": [103.5901, 36.3043],
+        "宁夏": [106.3586, 38.1775],
+        "青海": [101.4038, 36.8207],
+        "新疆": [87.9236, 43.5883],
+        "西藏": [91.11, 29.97],
+        "四川": [103.9526, 30.7617],
+        "重庆": [108.384366, 30.439702],
+        "山东": [117.1582, 36.8701],
+        "河南": [113.4668, 34.6234],
+        "江苏": [118.8062, 31.9208],
+        "安徽": [117.29, 32.0581],
+        "湖北": [114.3896, 30.6628],
+        "浙江": [119.5313, 29.8773],
+        "福建": [119.4543, 25.9222],
+        "江西": [116.0046, 28.6633],
+        "湖南": [113.0823, 28.2568],
+        "贵州": [106.6992, 26.7682],
+        "云南": [102.9199, 25.4663],
+        "广东": [113.12244, 23.009505],
+        "广西": [108.479, 23.1152],
+        "海南": [110.3893, 19.8516],
+        "上海": [121.4648, 31.2891]
+    };
+
+    var chinaDatas = [
+        [{
+            name: '黑龙江',
+            value: 0
+        }],	[{
+            name: '内蒙古',
+            value: 0
+        }],	[{
+            name: '吉林',
+            value: 0
+        }],	[{
+            name: '辽宁',
+            value: 0
+        }],	[{
+            name: '北京市',
+            value: 0
+        }],	[{
+            name: '河北',
+            value: 0
+        }],	[{
+            name: '天津',
+            value: 0
+        }],	[{
+            name: '山西',
+            value: 0
+        }],	[{
+            name: '陕西',
+            value: 0
+        }],	[{
+            name: '甘肃',
+            value: 0
+        }],	[{
+            name: '宁夏',
+            value: 0
+        }],	[{
+            name: '青海',
+            value: 0
+        }],	[{
+            name: '新疆',
+            value: 0
+        }],[{
+            name: '西藏',
+            value: 0
+        }],	[{
+            name: '重庆',
+            value: 0
+        }],	[{
+            name: '山东',
+            value: 0
+        }],	[{
+            name: '河南',
+            value: 0
+        }],	[{
+            name: '江苏',
+            value: 0
+        }],	[{
+            name: '安徽',
+            value: 0
+        }],	[{
+            name: '湖北',
+            value: 0
+        }],	[{
+            name: '浙江',
+            value: 0
+        }],	[{
+            name: '福建',
+            value: 0
+        }],	[{
+            name: '江西',
+            value: 0
+        }],	[{
+            name: '湖南',
+            value: 0
+        }],	[{
+            name: '贵州',
+            value: 0
+        }],[{
+            name: '广西',
+            value: 0
+        }],	[{
+            name: '海南',
+            value: 0
+        }],	[{
+            name: '上海',
+            value: 0
+        }]
+    ];
+
+
+    var value=[];
+
+    $.ajax({
+        type:"get",
+        url:"http://localhost:8081/demo/provincepoint/data",
+        data:{},
+        dataType : "json",
+        async: false,
+        success:function (data) {
+            for(var i=0;i<data.length;i++){
+
+                value.push([data[i].longitude,data[i].latitude])
+            }
+        },
+
+        error : function(errorMsg) {
+            //请求失败时执行该函数
+            alert("图表请求数据失败!");
+            myChart.hideLoading();
+        }
+
+    });
+
+
+
+    var convertData = function(data) {
+        var res = [];
+        for(var i = 0; i < data.length; i++) {
+            var dataItem = data[i];
+            var toCoord = chinaGeoCoordMap[dataItem[0].name];
+            var fromCoord = [103.9526, 30.7617];
+            if(fromCoord && toCoord) {
+                res.push([{
+                    coord: fromCoord,
+                    value: dataItem[0].value
+                }, {
+                    coord: toCoord
+                }]);
+            }
+        }
+        return res;
+    };
+
+    var series = [];
+
+    [['四川', chinaDatas]].forEach(function(item, i) {
+        console.log(item)
+        series.push({
+                type: 'lines',
+                zlevel: 2,
+                effect: {
+                    show: true,
+                    period: 4, //箭头指向速度，值越小速度越快
+                    trailLength: 0.02, //特效尾迹长度[0,1]值越大，尾迹越长重
+                    symbol: 'arrow', //箭头图标
+                    symbolSize: 5, //图标大小
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1, //尾迹线条宽度
+                        opacity: 1, //尾迹线条透明度
+                        curveness: .3, //尾迹线条曲直度
+                        color:'#ff0000'
+                    }
+                },
+                data: convertData(item[1])
+            },
+            {
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                zlevel: 2,
+                rippleEffect: { //涟漪特效
+                    period: 4, //动画时间，值越小速度越快
+                    brushType: 'stroke', //波纹绘制方式 stroke, fill
+                    scale: 4 //波纹圆环最大限制，值越大波纹越大
+                },
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'right', //显示位置
+                        offset: [5, 0], //偏移设置
+                        formatter: function(params){//圆环显示文字
+                            return params.data.name;
+                        },
+                        fontSize: 13
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                symbol: 'circle',
+                symbolSize: function(val) {
+                    return 5+ val[2] * 5; //圆环大小
+                },
+                itemStyle: {
+                    normal: {
+                        show: false,
+                        color: '#f00'
+                    }
+                },
+                data: item[1].map(function(dataItem) {
+                    return {
+                        name: dataItem[0].name,
+                        value: chinaGeoCoordMap[dataItem[0].name].concat([dataItem[0].value])
+                    };
+                }),
+            },
+            //被攻击点
+            {
+                type: 'scatter',
+                coordinateSystem: 'geo',
+                zlevel: 2,
+                rippleEffect: {
+                    period: 4,
+                    brushType: 'stroke',
+                    scale: 4
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right',
+                        //offset:[5, 0],
+                        color: '#0f0',
+                        formatter: '{b}',
+                        textStyle: {
+                            color: "#0f0"
+                        }
+                    },
+                    emphasis: {
+                        show: true,
+                        color: "#ff0000"
+                    }
+                },
+
+                symbol: 'pin',
+                symbolSize: 50,
+                data: [{
+                    name: item[0],
+                    value: chinaGeoCoordMap[item[0]].concat([10]),
+                }],
+            }
+        );
+    });
+
+    option = {
+        title: {
+            text: '食辣文化走向中国',
+            x:'center',
+            y: '14%',
+            padding: 5,
+            itemGap: 10,
+            textStyle: {
+                color: '#ffffff'
+            }
+        },
+
+        tooltip: {
+            trigger: 'item',
+            backgroundColor: 'rgba(166, 200, 76, 0.82)',
+            borderColor: '#FFFFCC',
+            showDelay: 0,
+            hideDelay: 0,
+            enterable: true,
+            transitionDuration: 0,
+            extraCssText: 'z-index:100',
+            formatter:'{b}'
+        },
+        backgroundColor:"#334559",
+        visualMap: { //图例值控制
+            min: 0,
+            max: 1,
+            calculable: true,
+            show: false,
+            color: ['#f44336', '#fc9700', '#ffde00', '#ffde00', '#00eaff'],
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        geo: {
+            map: 'china',
+            zoom: 1.2,
+            label: {
+                emphasis: {
+                    show: false
+                }
+            },
+            roam: true, //是否允许缩放
+            itemStyle: {
+                normal: {
+                    color: 'rgba(51, 69, 89, .5)', //地图背景色
+                    borderColor: '#516a89', //省市边界线00fcff 516a89
+                    borderWidth: 1
+                },
+                emphasis: {
+                    color: 'rgba(37, 43, 61, .5)' //悬浮背景
+                }
+            }
+        },
+        series: series
+    };
+
+    myChart.setOption(option);
+</script>
+
+
+
+</body>
+</html>

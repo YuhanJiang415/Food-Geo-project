@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Food</title>
+		<meta name="viewport" content="width=1120,user-scalable=no" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.poptrox-2.1.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/skel.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" />
+		</noscript>
+
+
+
+	</head>
+	<body>
+
+
+		<div id="wrapper">
+
+			<div id="main">
+				<div id="reel">
+				<!-- ******************************************************************************************** -->
+				<!-- ******************************************************************************************** -->
+
+
+					<!-- Header Item -->
+					
+						<div id="header" class="item" data-width="400">
+							<h1>食物世界地图</h1>
+
+						</div>
+					
+					<!-- Thumb Items -->
+					<article id="1" class="item thumb" data-width="335">
+					</article>
+
+						<article id="2" class="item thumb" data-width="259">
+						</article>
+						
+						<article id="3" class="item thumb" data-width="185">
+						</article>
+						
+						<article id="4" class="item thumb" data-width="161">
+						</article>
+						
+						<article id="5" class="item thumb" data-width="172">
+						</article>
+						
+						<article id="6" class="item thumb" data-width="185">
+						</article>
+						
+						<article id="7" class="item thumb" data-width="172">
+						</article>
+						
+						<article id="8" class="item thumb" data-width="261">
+						</article>
+						
+						<article id="9" class="item thumb" data-width="185">
+						</article>
+
+					<article id="10" class="item thumb" data-width="184">
+					</article>
+
+					<article id="11" class="item thumb" data-width="212">
+
+					</article>
+
+					<article id="12" class="item thumb" data-width="271">
+					</article>
+
+
+				<!-- ******************************************************************************************** -->
+				<!-- ******************************************************************************************** -->
+				</div>
+			</div>
+
+			<div id="footer">
+				<div class="left">
+					<p>食物，在人们的肚子里环游世界了千百年,人们带着这些符号创造了自己的历史。<br/>
+						像作品的名字那样，这个系列展示了不同国家或者大洲，都是选择了较具有代表性的，<br/>
+						如：中国、美国、日本、非洲等。不同国家的食物组成结构也不同，像美国就有玉米、小麦等，而印度则为各类香料。</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="dg" style="z-index: 9999; position: fixed ! important; right: 3px; bottom: 10px;">
+			<table width=""100% style="position: absolute; width:10px; right: 3px; bottom: 10px;">
+				<a href="../Start.html">
+					<h5 class="text-white-50 op-7 mb-2">Return</h5>
+				</a>
+			</table>
+		</div>
+	
+</body>
+
+<script type="text/javascript">
+
+            var str="";
+            var index="";
+            $.ajax({
+                type:"get",
+                url:"http://localhost:8081/demo/foodmap/data",
+                data:{},
+                async: false,
+                success:function (data) {
+
+                    for (var i=0;i<data.length;i++) {
+
+                        str = "<h2>"+data[i].state_name+"</h2>"+"" +
+							"<a href= "+data[i].foodmap_urltwo+">"+"<img src="+data[i].foodmap_urlone+">"+"</a>";
+                        index=data[i].id.toString();
+                        document.getElementById(index).innerHTML=str;
+                    }
+
+                },
+                error : function(errorMsg) {
+                    //请求失败时执行该函数
+                    alert("图表请求数据失败!");
+                    myChart.hideLoading();
+                }
+            });
+
+
+</script>
+
+
+</html>

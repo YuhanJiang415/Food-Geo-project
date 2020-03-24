@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Food</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="assets/img/icon.ico" type="image/x-icon"/>
+
+	<!-- Fonts and icons -->
+	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/atlantis.min.css">
+
+	<script src="jquery-3.4.1/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<!-- Logo Header -->
+			<div class="logo-header" data-background-color="blue">
+
+				<a href="All_View_China.html" class="logo">
+					<img src="photos/logo.png" alt="navbar brand" class="navbar-brand">
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+				<div class="nav-toggle">
+					<button class="btn btn-toggle toggle-sidebar">
+						<i class="icon-menu"></i>
+					</button>
+				</div>
+			</div>
+			<!-- End Logo Header -->
+
+			<!-- Navbar Header -->
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+				
+				<div class="container-fluid">
+					<div class="collapse" id="search-nav">
+						<form class="navbar-left navbar-form nav-search mr-md-3">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<a href="index.html" class="btn btn-search pr-1">
+										<i class="fa fa-search search-icon"></i>
+									</a>
+								</div>
+								<input type="text" placeholder="搜索 ..." class="form-control">
+							</div>
+						</form>
+					</div>
+				</div>
+			</nav>
+			<!-- End Navbar -->
+		</div>
+
+		<!-- Sidebar -->
+		<div class="sidebar sidebar-style-2">			
+			<div class="sidebar-wrapper scrollbar scrollbar-inner">
+				<div class="sidebar-content">
+					<div class="user">
+						<div class="avatar-sm float-left mr-2">
+							<img src="photos/川菜.jpg" alt="..." class="avatar-img rounded-circle">
+						</div>
+						<div class="info">
+							<a data-toggle="collapse" aria-expanded="true">
+								<span>
+									川菜
+								</span>
+								<span class="user-level" style="font-size:12px">
+									麻、辣、咸、甜、酸、苦、香
+								</span>
+							</a>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<ul class="nav nav-primary">
+						<li class="nav-item active">
+								<a href="index.html">
+									<i class="fas fa-th-list"></i>
+									<p>川菜词云</p>
+								</a>
+						</li>
+						<li class="nav-item">
+							<a href="Geo.html" >
+								<i class="far fa-chart-bar"></i>
+								<p>地理分析</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="History.html">
+								<i class="fas fa-pen-square"></i>
+								<p>历史因素</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="SpicyMap.html">
+								<i class="fas fa-layer-group"></i>
+								<p>食辣地图</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="Globe.html">
+								<i class="fas fa-map-marker-alt"></i>
+								<p>走向世界</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidebar -->
+
+
+					<div id="main" style="width: auto;height:600px;margin: 0 auto;"></div>
+
+
+	</div>
+	<!--   Core JS Files   -->
+	<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="assets/js/core/popper.min.js"></script>
+	<script src="assets/js/core/bootstrap.min.js"></script>
+	<!-- jQuery UI -->
+	<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<!-- jQuery Scrollbar -->
+	<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<!-- Chart JS -->
+	<script src="assets/js/plugin/chart.js/chart.min.js"></script>
+	<!-- jQuery Sparkline -->
+	<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+	<!-- Chart Circle -->
+	<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+	<!-- Datatables -->
+	<script src="assets/js/plugin/datatables/datatables.min.js"></script>
+	<!-- Bootstrap Notify -->
+	<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+	<!-- jQuery Vector Maps -->
+	<script src="assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+	<!-- Sweet Alert -->
+	<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+	<!-- Atlantis JS -->
+	<script src="assets/js/atlantis.min.js"></script>
+
+	<script type="text/javascript" src="e-chart/echarts.js"></script>
+	<script type="text/javascript" src='e-chart/echarts-wordcloud.js'></script>
+	<script type="text/javascript" src='e-chart/china.js'></script>
+	<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+	<script type="text/javascript" src="e-chart/data-1556466081698-qDedSQsRX.js"></script>
+	<script type="text/javascript" src="e-chart/world.js"></script>
+
+	<script >
+        var myChart = echarts.init(document.getElementById('main'));
+        var $imgs = [];
+        var value=[];
+        $.ajax({
+            type:"get",
+            url:"http://localhost:8081/demo/wordcloud/data",
+            data:{},
+            dataType : "json",
+            async: false,
+            success:function (data) {
+                for(var i=0;i<data.length;i++){
+                    $imgs.push({area:data[i].keyword,url:data[i].word_url});
+                    value.push({name:data[i].keyword,value:data[i].value})
+                }
+            },
+            error : function(errorMsg) {
+                //请求失败时执行该函数
+                alert("图表请求数据失败!");
+                myChart.hideLoading();
+            }
+
+        });
+
+        var option = {
+            title: {
+                text: '川\n菜\n词\n云',
+                x:'88%',
+                y: 'center',
+                padding: 5,
+                itemGap: 10,
+                textStyle: {
+                    color: '#ffffff',
+                    fontSize: 30
+                }
+            },
+
+            tooltip : {
+                trigger: 'item',
+                borderWidth:5,
+                position: function(point, params, dom, rect, size){
+                    //其中point为当前鼠标的位置，size中有两个属性：viewSize和contentSize，分别为外层div和tooltip提示框的大小
+                    var x = point[0];//
+                    var y = point[1];
+                    var viewWidth = size.viewSize[0];
+                    var viewHeight = size.viewSize[1];
+                    var boxWidth = size.contentSize[0];
+                    var boxHeight = size.contentSize[1];
+                    var posX = 0;//x坐标位置
+                    var posY = 0;//y坐标位置
+
+                    if(x<boxWidth){//左边放不开
+                        posX = 5;
+                    }else{//左边放的下
+                        posX = x-boxWidth;
+                    }
+
+                    if(y<boxHeight){//上边放不开
+                        posY = 5;
+                    }else{//上边放得下
+                        posY = y-boxHeight;
+                    }
+
+                    return [posX,posY];
+
+                },
+
+                formatter:function (params,ticket,callback){
+                    var $pna = params.name;
+                    var res = '';
+
+                    for(var i = 0;i<$imgs.length;i++){
+                        if($imgs[i].area === $pna && $imgs[i].url!==null){
+                            res = '<img src="'+ $imgs[i].url +'" />';
+                            break;
+                        }
+                    }
+
+                    setTimeout(function (){
+                        // 仅为了模拟异步回调
+                        callback(ticket, res);//回调函数，这里可以做异步请求加载的一些代码
+                    }, 100);
+                    return res;
+                }
+            },
+            roam: true, //是否允许缩放
+            backgroundColor: '#013954',
+            series: [ {
+                type: 'wordCloud',
+                gridSize: 5,
+                sizeRange: [20, 40],
+                rotationRange: [-90, 90],
+                shape: 'pentagon',
+                width: 800,
+                height: 600,
+                drawOutOfBound: true,
+                textStyle: {
+                    normal: {
+                        color: function () {
+                            return 'rgb(' + [
+                                Math.round(Math.random() * 105)+150,
+                                Math.round(Math.random() * 105)+150,
+                                Math.round(Math.random() * 105)+150
+                            ].join(',') + ')';
+                        }
+                    },
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowColor: '#ffffff'
+                    }
+                },
+                data: value
+            } ]
+        };
+
+        myChart.setOption(option);
+
+        window.onresize = myChart.resize;
+	</script>
+
+
+
+</body>
+</html>
