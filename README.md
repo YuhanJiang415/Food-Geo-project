@@ -6,4 +6,5 @@
 2. food.sql is the database file for the platform. Store data using Mysql;
 3. Front_end folder is the platform's front-end project file. The front end uses Bootstrap to build the basic framework. Echarts finishes drawing basic charts. jQuery implements front-end and back-end interaction of data；
 4. Back_end folder  is a back-end project file, using Springboot's basic framework；
-5. In the Screenshot folder are screenshots of the platform runtime.
+5. In the Screenshot folder are screenshots of the platform runtime;
+6. Presentation.pptx is the PPT of the project presentation.
