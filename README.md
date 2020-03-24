@@ -1,8 +1,9 @@
-品舌尖美食，感中国地理。经过漫长的历史演变，我国逐渐形成了川苏鲁浙湘徽粤闽八大菜系。八大菜系的形成，与地理和人文有着千丝万缕的联系。地理的地形、气候、土壤等因素，人文的民俗、通商、制造业的发展等因素都与美食文化的形成有关。而这些因素背后有什么联系，如何将各个因素的影响进行可视化，当今中国和世界又是怎样被美食文化影响着，就是我们这个系统要呈现的内容。
-
+"Tasting the food on the tongue, feeling Chinese geography". After a long historical evolution, China has gradually formed eight major cuisines, including Sichuan, Jiangsu, Zhejiang, Hunan, Huizhou, Guangdong and Fujian. The formation of the eight major cuisines is inextricably linked to geography and humanities. Geographical topography, climate, soil, and other factors, humanities and folk customs, commerce, and the development of manufacturing are all related to the formation of gourmet culture. What is the connection behind these factors, how to visualize the influence of each factor, and how China and the world are influenced by the food culture are the contents of our system.
+ 
 ####################################################
 
-1. Food.mp4 是平台运行以及界面展示的录屏
-2. food.sql 是平台的数据库文件。使用Mysql储存数据
-3. Front_end 是平台的前端工程文件。前端开发使用Bootstrap搭建基本框架，Echarts完成基本图表的绘制，jQuery实现数据的前后端交互。
-4. Back_end 是后端的工程文件。后端开发使用Springboot搭建的基本框架，基于Jpa的方法实现对数据库的操纵。
+1. Food.mp4 is a screen recording of platform operation and interface display;
+2. food.sql is the database file for the platform. Store data using Mysql;
+3. Front_end folder is the platform's front-end project file. The front end uses Bootstrap to build the basic framework. Echarts finishes drawing basic charts. jQuery implements front-end and back-end interaction of data；
+4. Back_end folder  is a back-end project file, using Springboot's basic framework；
+5. In the Screenshot folder are screenshots of the platform runtime.
