@@ -1,5 +1,6 @@
 
 # Introduce
+[Report.pdf](https://inn905.github.io/Food-project/Report.pdf)  
 "Tasting the food on the tongue, feeling Chinese geography". After a long historical evolution, China has gradually formed eight major cuisines, including Sichuan, Jiangsu, Zhejiang, Hunan, Huizhou, Guangdong and Fujian. The formation of the eight major cuisines is inextricably linked to geography and humanities. Geographical topography, climate, soil, and other factors, humanities and folk customs, commerce, and the development of manufacturing are all related to the formation of gourmet culture. What is the connection behind these factors, how to visualize the influence of each factor, and how China and the world are influenced by the food culture are the contents of our system.
  
 
